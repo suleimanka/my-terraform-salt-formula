@@ -1,0 +1,8 @@
+name: base
+os: RedHat, CentOS, Debian, Ubuntu
+os_family: RedHat, Debian
+version: 0.0.1
+release: 1
+minimum_version: 3001.1
+summary: Base host management
+description: SaltStack Formula for base host configuration

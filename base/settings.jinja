@@ -1,0 +1,79 @@
+{%- set base_default                                            = {
+      'packages'                                                : {
+        'any'                                                   : [
+          'less',
+          'mc',
+          'unzip',
+          'acl',
+          'telnet',
+          'tcpdump',
+          'wget',
+          'rsync',
+          'htop',
+        ],
+        'distribution'                                          : {
+          'debian'                                              : [
+            'vim',
+          ],
+          'redhat'                                              : [
+            'vim-enhanced',
+            'bind-utils',
+            'procps-ng',
+            'python3-libselinux',
+          ],
+        }.get(grains.os_family|lower),
+        'custom'                                                : [],
+      },
+      'sysctl'                                                  : {
+        'vm.swappiness'                                         : '1',
+        'net.ipv4.tcp_syncookies'                               : '1',
+        'net.ipv4.tcp_fin_timeout'                              : '60',
+        'net.ipv4.conf.all.rp_filter'                           : '1',
+        'net.ipv4.conf.all.log_martians'                        : '1',
+        'net.ipv4.conf.all.secure_redirects'                    : '0',
+        'net.ipv4.conf.all.accept_source_route'                 : '0',
+        'net.ipv4.icmp_echo_ignore_broadcasts'                  : '1',
+      },
+      'shell'                                                   : {
+        'timeout'                                               : '600',
+      },
+      'aliases'                                                 : {
+        'placeholder'                                           : {
+          'debian'                                              : '# System-wide .bashrc',
+          'redhat'                                              : '# /etc/bashrc',
+        }.get(grains.os_family|lower),
+        'file'                                                  : {
+          'debian'                                              : '/etc/bash.bashrc',
+          'redhat'                                              : '/etc/bashrc',
+        }.get(grains.os_family|lower),
+        'commands'                                              : {
+          'mc'                                                  : "alias mc='EDITOR=vi VIEWER=less mc'",
+        },
+      },
+      'vim'                                                     : {
+        'vimrc'                                                 : {
+          'debian'                                              : '/etc/vim/vimrc',
+          'redhat'                                              : '/etc/vimrc',
+        }.get(grains.os_family|lower),
+        'virc'                                                  : {
+          'debian'                                              : '/etc/vim/virc',
+          'redhat'                                              : '/etc/virc',
+        }.get(grains.os_family|lower),
+      },
+      'mc'                                                      : {
+        'conf'                                                  : '/etc/mc',
+        'skin'                                                  : 'modarin256root-defbg',
+      },
+    }
+%}
+
+{%- set base = salt['pillar.get']('base', default=base_default, merge=True) %}
+
+{%- set base_packages                                           = {
+      'pkgs'                                                    : base.packages.any +
+                                                                  base.packages.distribution|default([]) +
+                                                                  base.packages.custom|default([])
+    }
+%}
+
+{%- do salt['defaults.merge'](base, base_packages) %}
