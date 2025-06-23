@@ -1,0 +1,29 @@
+I, [2025-06-17T00:31:24.254859 #22971]  INFO -- Kitchen: -----> Starting Test Kitchen (v3.7.0)
+E, [2025-06-17T00:31:24.255208 #22971] ERROR -- Kitchen: ------Exception-------
+E, [2025-06-17T00:31:24.255228 #22971] ERROR -- Kitchen: Class: Kitchen::UserError
+E, [2025-06-17T00:31:24.255239 #22971] ERROR -- Kitchen: Message: Kitchen YAML file /home/suleiman/my-formula/terraform/kitchen.yml does not exist.
+E, [2025-06-17T00:31:24.255249 #22971] ERROR -- Kitchen: ----------------------
+E, [2025-06-17T00:31:24.255257 #22971] ERROR -- Kitchen: ------Backtrace-------
+E, [2025-06-17T00:31:24.255264 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/loader/yaml.rb:65:in `read'
+E, [2025-06-17T00:31:24.255271 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/config.rb:153:in `data'
+E, [2025-06-17T00:31:24.255278 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/config.rb:131:in `suites'
+E, [2025-06-17T00:31:24.255284 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/config.rb:183:in `filter_instances'
+E, [2025-06-17T00:31:24.255291 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/config.rb:142:in `build_instances'
+E, [2025-06-17T00:31:24.255297 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/config.rb:116:in `instances'
+E, [2025-06-17T00:31:24.255304 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:109:in `filtered_instances'
+E, [2025-06-17T00:31:24.255310 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:139:in `parse_subcommand'
+E, [2025-06-17T00:31:24.255317 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command/action.rb:34:in `block in call'
+E, [2025-06-17T00:31:24.255344 #22971] ERROR -- Kitchen: /usr/lib/ruby/3.2.0/benchmark.rb:296:in `measure'
+E, [2025-06-17T00:31:24.255356 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command/action.rb:33:in `call'
+E, [2025-06-17T00:31:24.255364 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/cli.rb:52:in `perform'
+E, [2025-06-17T00:31:24.255372 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/cli.rb:198:in `block (2 levels) in <class:CLI>'
+E, [2025-06-17T00:31:24.255380 #22971] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor/command.rb:28:in `run'
+E, [2025-06-17T00:31:24.255387 #22971] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor/invocation.rb:127:in `invoke_command'
+E, [2025-06-17T00:31:24.255394 #22971] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor.rb:538:in `dispatch'
+E, [2025-06-17T00:31:24.255401 #22971] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor/base.rb:584:in `start'
+E, [2025-06-17T00:31:24.255408 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/bin/kitchen:11:in `block in <top (required)>'
+E, [2025-06-17T00:31:24.255414 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/errors.rb:183:in `with_friendly_errors'
+E, [2025-06-17T00:31:24.255421 #22971] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/bin/kitchen:11:in `<top (required)>'
+E, [2025-06-17T00:31:24.255428 #22971] ERROR -- Kitchen: /usr/local/bin/kitchen:25:in `load'
+E, [2025-06-17T00:31:24.255435 #22971] ERROR -- Kitchen: /usr/local/bin/kitchen:25:in `<main>'
+E, [2025-06-17T00:31:24.255442 #22971] ERROR -- Kitchen: ----End Backtrace-----

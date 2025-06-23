@@ -1,0 +1,10 @@
+terraform:
+  url: 'https://hashicorp-releases.yandexcloud.net/terraform'
+  versions:
+    - '1.8.5'
+    - '1.7.5'
+    - '1.5.0'
+  default: '1.8.5'
+  arch: 'amd64'
+  dirs:
+    root: '/usr/local/tools'
